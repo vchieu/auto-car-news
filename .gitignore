@@ -1,0 +1,37 @@
+# Môi trường ảo Python
+venv/
+ENV/
+env/
+
+# File cấu hình chứa API Key / Token nhạy cảm
+config.json
+
+# Cache của Python
+__pycache__/
+*.py[cod]
+
+# File lưu vết bài viết
+seen_urls.json
+
+# File log
+*.log
+*.log.*
+facebook_*.log
+gemini_*.log
+rss_*.log
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# File tạm & tải xuống
+downloads/
+temp/
+*.bak
+*.old
+*.local
+*.trace

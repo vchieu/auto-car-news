@@ -1,0 +1,40 @@
+{
+  "rss_sources": [
+    {
+      "name": "VnExpress Ô tô",
+      "url": "https://vnexpress.net/rss/oto.rss"
+    },
+    {
+      "name": "Tuổi Trẻ Ô tô",
+      "url": "https://tuoitre.vn/rss/oto.rss"
+    },
+    {
+      "name": "Thanh Niên Ô tô",
+      "url": "https://thanhnien.vn/rss/oto.rss"
+    }
+  ],
+
+  "ai_provider": "gemini",
+
+  "openai": {
+    "api_key": "YOUR_OPENAI_OR_PROXY_KEY",
+    "base_url": "https://openrouter.ai/api/v1",
+    "model": "gpt-4o-mini"
+  },
+
+  "gemini": {
+    "api_key": "YOUR_GEMINI_API_KEY",
+    "model": "gemini-2.5-flash"
+  },
+
+  "facebook": {
+    "page_id": "YOUR_PAGE_ID",
+    "access_token": "YOUR_FACEBOOK_ACCESS_TOKEN",
+    "api_version": "v19.0"
+  },
+
+  "settings": {
+    "max_articles_per_source": 10,
+    "run_time": "08:00"
+  }
+}
