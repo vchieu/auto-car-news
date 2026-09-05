@@ -35,6 +35,7 @@
 
   "settings": {
     "max_articles_per_source": 10,
-    "run_time": "08:00"
+    "run_time": "08:00",
+    "ai_timeout": 30
   }
 }

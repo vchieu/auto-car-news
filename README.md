@@ -96,7 +96,11 @@ Thêm dòng sau (chạy lúc 08:00 mỗi ngày):
 #### Bước 3: Kiểm tra log
 
 ```bash
-cat logs/app_20240101.log
+# Xem log hiện tại
+cat logs/app.log
+
+# Xem log cũ đã xoay theo ngày (ví dụ ngày 01/01/2024)
+cat logs/app.log.20240101
 ```
 
 ### Chạy với Task Scheduler (Windows)
@@ -114,11 +118,14 @@ cat logs/app_20240101.log
 File log được lưu tự động trong thư mục `logs/`:
 
 ```bash
-# Xem log hôm nay
-cat logs/app_20240101.log
+# Xem log hiện tại
+cat logs/app.log
+
+# Xem log cũ đã xoay theo ngày (ví dụ ngày 01/01/2024)
+cat logs/app.log.20240101
 
 # Theo dõi log real-time
-tail -f logs/app_20240101.log
+tail -f logs/app.log
 ```
 
 Log gồm các cấp độ: `INFO`, `WARNING`, `ERROR`, `CRITICAL`
@@ -214,7 +221,7 @@ Chức năng:
 Chức năng:
 - Điều phối toàn bộ quy trình
 - Hỗ trợ 2 chế độ: một lần (phù hợp Cronjob) và liên tục (--daemon)
-- Ghi log ra file `logs/app_YYYYMMDD.log`
+- Ghi log ra file `logs/app.log` với **xoay tự động lúc nửa đêm**, giữ 30 ngày
 - Chạy thử ngay lập tức
 
 ## Mechanism chi tiết
@@ -270,6 +277,7 @@ Sử dụng `tenacity` decorator với:
 8. **Cronjob**: Dùng `python main.py` (không có tham số) cho Cronjob/Task Scheduler. File log giúp debug dễ dàng khi không có terminal
 9. **Daemon mode**: Dùng `python main.py --daemon` để chạy liên tục với vòng lặp trong Python
 10. **Race Condition**: Nếu chạy nhiều instance cùng lúc, hệ thống sẽ tự động khóa file `seen_urls.json` để tránh xung đột
+11. **Log Rotation**: File log `logs/app.log` tự động xoay lúc nửa đêm mỗi ngày, giữ 30 ngày gần nhất
 
 ## Hỗ trợ
 

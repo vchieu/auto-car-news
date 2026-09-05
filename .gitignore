@@ -12,6 +12,10 @@ __pycache__/
 
 # File lưu vết bài viết
 seen_urls.json
+seen_urls.json.lock
+
+# Thư mục log
+logs/
 
 # File log
 *.log
